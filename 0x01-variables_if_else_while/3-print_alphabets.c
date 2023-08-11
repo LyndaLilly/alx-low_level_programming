@@ -1,8 +1,6 @@
 #include <stdio.h>
-
 /**
  * main -Entry point
- *
  * Return: Always 0
  */
 
@@ -13,14 +11,14 @@ int main(void)
 
 	c = 'a';
 	d = 'A';
-	
+
 	while (c <= 'z')
 	{
 		putchar(c);
 		c++;
 	}
 
-	while (d <= 'z')
+	while (d <= 'Z')
 	{
 		putchar(d);
 		d++;
