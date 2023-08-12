@@ -1,6 +1,6 @@
 #include <stdio.h>
 /**
- * main - prints all possible combinations of two digit
+ * main - prints all possible dif combinations of these digits
  * Return: Always 0
  */
 int main(void)
@@ -28,9 +28,11 @@ int main(void)
 				}
 			}
 		}
-	}	
-
+	}
 	putchar('\n');
 	return (0);
 }
+
+	
+
 
