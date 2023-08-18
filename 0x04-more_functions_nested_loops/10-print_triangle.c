@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_triangle - func Prints a triangle, using the character #.
+ * print_triangle - func Prints a triangle, using the character '#'.
  * @size: The size of the triangle.
  */
 
