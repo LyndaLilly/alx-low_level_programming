@@ -1,10 +1,5 @@
 #include <stdio.h>
 
-/**
- * main - modify a
- * Return: 0
- */
-
 int main(void)
 {
 int n;
