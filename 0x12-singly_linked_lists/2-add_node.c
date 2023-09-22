@@ -2,26 +2,25 @@
 #include <string.h>
 #include "lists.h"
 /**
-* add_node - adds a new node at the beginning of a linked list
-* @head: double pointer to the list_t list
+* add_node - This will add a new node at the beginning of a linked list
+* @head: double pointer
 * @str: new string to add in the node
-*
-* Return: the address of the new element, or NULL if it fails
+* Return: the address
 */
 list_t *add_node(list_t **head, const char *str)
 {
-list_t *new;
+list_t *current;
 unsigned int len = 0;
 
 while (str[len])
 	len++;
 
-new = malloc(sizeof(list_t));
-if (!new)
+current = malloc(sizeof(list_t));
+if (!current)
 	return (NULL);
-new->str = strdup(str);
-new->len = len;
-new->next = (*head);
-(*head) = new;
+current->str = strdup(str);
+current->len = len;
+current->next = (*head);
+(*head) = current;
 return (*head);
 }
