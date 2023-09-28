@@ -3,17 +3,24 @@
 /**
  * print_binary - prints a number in binary notation
  * @n: number to print
- * Return: void
  */
 void print_binary(unsigned long int n)
 {
-	int bit_count = sizeof(unsigned long int) * 8;
-	int i;
+	int i, j = 0;
+	unsigned long int  bit_position;
 
-	for (i = bit_count - 1; i >= 0; i--)
+	for (i = 63; i >= 0; i--)
 	{
-		unsigned long int mask = 1UL << i;
+		bit_position = n >> i;
 
-		putchar((n & mask) ? '1' : '0');
+		if (bit_position & 1)
+		{
+			putchar('1');
+			j++;
+		}
+		else if (j)
+			putchar('0');
 	}
+	if (!j)
+		_putchar('0');
 }
