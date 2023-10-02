@@ -4,7 +4,6 @@
 
 char *file_content(char *context);
 void finished_content(int file_directory);
-
 /**
  * file_content - this is 1024 bytes for a buffer.
  * @context: the content of the file to creater.
@@ -18,11 +17,9 @@ char *file_content(char *context)
 
 	if (buf == NULL)
 	{
-		dprintf(STDERR_FILENO,
-			"Error: Can't write to %s\n", context);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", context);
 		exit(99);
 	}
-
 	return (buf);
 }
 
@@ -59,7 +56,6 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
-
 	buf = file_content(argv[2]);
 	from = open(argv[1], O_RDONLY);
 	reads = read(from, buf, 1024);
@@ -68,29 +64,23 @@ int main(int argc, char *argv[])
 	do {
 		if (from == -1 || reads == -1)
 		{
-			dprintf(STDERR_FILENO,
-				"Error: Can't read from file %s\n", argv[1]);
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 			free(buf);
 			exit(98);
 		}
-
 		writes = write(to, buf, reads);
+
 		if (to == -1 || writes == -1)
 		{
-			dprintf(STDERR_FILENO,
-				"Error: Can't write to %s\n", argv[2]);
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 			free(buf);
 			exit(99);
 		}
-
 		reads = read(from, buf, 1024);
 		to = open(argv[2], O_WRONLY | O_APPEND);
-
 	} while (reads > 0);
-
 	free(buf);
 	finished_content(from);
 	finished_content(to);
-
 	return (0);
 }
