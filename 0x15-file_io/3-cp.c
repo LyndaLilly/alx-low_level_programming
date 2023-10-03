@@ -2,14 +2,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-char *file_content(char *context);
+char *file_content(char *file);
 void finished_content(int file_directory);
 /**
  * file_content - this is 1024 bytes for a buffer.
- * @context: the content of the file to creater.
- * Return: A file.
+ * @file: the content of the file to creater.
+ * Return: a pointer.
  */
-char *file_content(char *context)
+char *file_content(char *file)
 {
 	char *buf;
 
@@ -17,7 +17,7 @@ char *file_content(char *context)
 
 	if (buf == NULL)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", context);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file);
 		exit(99);
 	}
 	return (buf);
@@ -25,18 +25,18 @@ char *file_content(char *context)
 
 /**
  * finished_content - Closes file descriptors.
- * @file_directory: The file directory to be closed.
- * Return: Error if file does not exist
+ * @filedes: The file directory to be closed.
+ * Return: nothing
  */
-void finished_content(int file_directory)
+void finished_content(int filedes)
 {
 	int content;
 
-	content = close(file_directory);
+	content = close(filedes);
 
 	if (content == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close %d\n", file_directory);
+		dprintf(STDERR_FILENO, "Error: Can't close filedes %d\n", filedes);
 		exit(100);
 	}
 }
