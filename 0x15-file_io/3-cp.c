@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 char *file_content(char *file);
-void finished_content(int file_directory);
+void finished_content(int fd);
 /**
  * file_content - this is 1024 bytes for a buffer.
  * @file: the content of the file to creater.
@@ -25,18 +25,18 @@ char *file_content(char *file)
 
 /**
  * finished_content - Closes file descriptors.
- * @filedes: The file directory to be closed.
+ * @fd: The file directory to be closed.
  * Return: nothing
  */
-void finished_content(int filedes)
+void finished_content(int fd)
 {
 	int content;
 
-	content = close(filedes);
+	content = close(fd);
 
 	if (content == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close filedes %d\n", filedes);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
 		exit(100);
 	}
 }
