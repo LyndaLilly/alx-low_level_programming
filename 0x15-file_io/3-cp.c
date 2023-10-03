@@ -26,6 +26,7 @@ char *file_content(char *context)
 /**
  * finished_content - Closes file descriptors.
  * @file_directory: The file directory to be closed.
+ * Return: Error if file does not exist
  */
 void finished_content(int file_directory)
 {
