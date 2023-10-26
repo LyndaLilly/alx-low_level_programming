@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include "main.h"
 /**
- * get_bit - returns the value of a bit at an index in a decimal number
- * @n: number to search
- * @index:  is the index, starting from 0 of the bit you want to get
- * Return: the value of the bit at index index or -1 if an error occured
+ * get_bit - this gets the bit number
+ * @n: num of bit to get
+ * @index:  the index of bit to get
+ * Return: -1
  */
 int get_bit(unsigned long int n, unsigned int index)
 {
