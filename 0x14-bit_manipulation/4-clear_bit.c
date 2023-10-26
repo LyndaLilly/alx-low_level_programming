@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include "main.h"
 /**
- * clear_bit - sets the value of 0
+ * clear_bit - sets the value
  * @n: pointer to no to chng
- * @index: is the index, starting from 0 of the bit you want to set
- * Return: 1 if it worked, or -1 if an error occurred
+ * @index: is the index of bit to change
+ * Return: 1 or -1
  */
 int clear_bit(unsigned long int *n, unsigned int index)
 {
