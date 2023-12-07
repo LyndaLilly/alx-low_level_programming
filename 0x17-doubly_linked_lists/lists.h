@@ -5,17 +5,17 @@
 #include <stdlib.h>
 
 /**
- * struct dlistint_s - this is linked list
- * @n: no of linked list
- * @x: points to previous link
- * @y: poin to next link
- * Description: this describes the link
+ * struct dlistint_s - this is double linked list
+ * @n: this is the no of linked list
+ * @prev: previous link list
+ * @next: next linkl list
+ * Description: describes linked list
  */
 typedef struct dlistint_s
 {
 	int n;
-	struct dlistint_s *x;
-	struct dlistint_s *y;
+	struct dlistint_s *prev;
+	struct dlistint_s *next;
 } dlistint_t;
 
 size_t print_dlistint(const dlistint_t *h);
